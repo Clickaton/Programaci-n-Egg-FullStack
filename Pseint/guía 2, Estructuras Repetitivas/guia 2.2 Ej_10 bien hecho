@@ -1,0 +1,38 @@
+Algoritmo Ej_10
+	
+	// n2 base / nm espacio vacio / ne lado
+	Definir base,ladoIzquiero,vacio, ladoDerecho Como Entero
+	Leer base
+	ladoIzquiero=base
+	ladoDerecho=base
+	vacio=base
+	
+	Si base=1 Entonces
+		Escribir "*"
+	SiNo
+		Si base=2 Entonces
+			Escribir "*  *"
+			Escribir "*  *"
+		SiNo
+			Para base<-1 Hasta base Hacer
+				Escribir Sin Saltar  "*  "
+			Fin Para
+			Escribir ""
+			
+			Para ladoIzquiero<-1 Hasta ladoIzquiero -2 Hacer
+				Escribir Sin Saltar "*  "
+				Para vacio<-1 Hasta ladoDerecho-2 Hacer
+					Escribir Sin Saltar "   "
+				Fin Para
+				Escribir Sin Saltar "*"
+				Escribir ""
+			Fin Para
+			
+			Para base<-1 Hasta base-1 Hacer
+				Escribir Sin Saltar "*  "
+			Fin Para
+			Escribir ""
+		Fin Si
+	Fin Si
+	
+FinAlgoritmo

@@ -1,0 +1,31 @@
+//Realizar un programa que lea 10 números reales por teclado, los almacene en un arreglo y
+//muestre por pantalla la suma, resta y multiplicación de todos los números ingresados al
+//arreglo.
+Algoritmo ejercicio2vect
+	operacionesNumReales()
+FinAlgoritmo
+
+SubProceso operacionesNumReales()
+	Dimension num(10)
+	definir i Como Entero
+	definir num,suma,resta,mul Como Real
+	suma = 0
+	resta=0
+	mul = 0
+	para i=0 Hasta 9 Hacer
+		escribir "Ingresa un numero (",i,")"," " Sin Saltar
+		Leer num(i)
+		si suma==0 y resta==0 y mul==0  Entonces
+			suma = num(i)
+			resta = num(i)
+			mul = num(i)
+		sino 
+			suma = suma + num(i)
+			resta = resta - num(i)
+			mul = mul * num(i)
+		FinSi
+	FinPara
+	Escribir "La suma de todos los numeros es = ", suma
+	Escribir "La resta de todos los numeros es = ",resta
+	Escribir "La multiplicacion de todos los numeros es  = ",mul
+FinSubProceso

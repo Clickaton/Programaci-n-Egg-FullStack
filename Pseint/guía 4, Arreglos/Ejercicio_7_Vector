@@ -1,0 +1,33 @@
+//Programe una función recursiva que calcule la suma de un arreglo de números enteros.
+
+Algoritmo Ejercicio_7
+	Definir v, i, n Como Entero
+	
+	Escribir "Ingrese la cantidad de valores"
+	Leer n
+	Dimension v(n)
+	
+	para i=0 hasta n-1 Hacer
+		v(i)=Aleatorio(0,10)
+		Escribir sin saltar v(i) " "
+	FinPara
+	
+Escribir "La suma de los numeros es: ", suma(v,i-1)
+	
+FinAlgoritmo
+
+funcion calculo=suma(v Por Referencia, i)
+	Definir calculo Como Entero
+	calculo=0
+	
+	si i=0 Entonces
+		calculo=v(0)
+	SiNo
+		calculo=v(i)+suma(v, i-1)
+	FinSi
+	
+	
+FinFuncion
+	
+	
+	
