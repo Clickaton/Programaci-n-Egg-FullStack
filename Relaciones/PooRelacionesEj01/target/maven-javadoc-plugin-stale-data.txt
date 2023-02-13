@@ -1,0 +1,49 @@
+@options
+@packages
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'C:/Users/chris/OneDrive/Documentos/NetBeansProjects/PooRelacionesEj01/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/chris/OneDrive/Documentos/NetBeansProjects/PooRelacionesEj01/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'PooRelacionesEj01Yej02 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/chris/OneDrive/Documentos/NetBeansProjects/PooRelacionesEj01/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'PooRelacionesEj01Yej02 1.0-SNAPSHOT API'
+Entidades
+PooRelacionesEj01
+Servicios
+'C:/Users/chris/OneDrive/Documentos/NetBeansProjects/PooRelacionesEj01/src/main/java/Entidades/Perro.java'
+'C:/Users/chris/OneDrive/Documentos/NetBeansProjects/PooRelacionesEj01/src/main/java/Entidades/Persona.java'
+'C:/Users/chris/OneDrive/Documentos/NetBeansProjects/PooRelacionesEj01/src/main/java/PooRelacionesEj01/PooRelacionesEj01.java'
+'C:/Users/chris/OneDrive/Documentos/NetBeansProjects/PooRelacionesEj01/src/main/java/Servicios/servicioPerro.java'
+'C:/Users/chris/OneDrive/Documentos/NetBeansProjects/PooRelacionesEj01/src/main/java/Servicios/servicioPersona.java'
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\src\main\java = 1675209068429
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\allclasses-frame.html = 1675730379107
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\allclasses-noframe.html = 1675730379107
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\constant-values.html = 1675730378837
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\deprecated-list.html = 1675730379097
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\help-doc.html = 1675730379127
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\index-all.html = 1675730379097
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\index.html = 1675730379107
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\overview-frame.html = 1675730378737
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\overview-summary.html = 1675730379117
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\overview-tree.html = 1675730379067
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\package-list = 1675730378727
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\script.js = 1675730379137
+C:\Users\chris\OneDrive\Documentos\NetBeansProjects\PooRelacionesEj01\target\site\apidocs\stylesheet.css = 1675730379127
