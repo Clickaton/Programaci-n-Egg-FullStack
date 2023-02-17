@@ -1,0 +1,87 @@
+Algoritmo sin_titulo
+//	Un docente de Programación tiene un listado de 3 notas registradas por cada uno de sus
+//	N estudiantes. La nota final se compone de un trabajo práctico Integrador (35%), una
+//	Exposición (25%) y un Parcial (40%). El docente requiere los siguientes informes claves
+//de sus estudiantes:
+//	? Nota promedio final de los estudiantes que reprobaron el curso. Un estudiante
+//	reprueba el curso si tiene una nota final inferior a 6.5
+//		? Porcentaje de alumnos que tienen una nota de integrador mayor a 7.5.
+//		? La mayor nota obtenida en las exposiciones.
+//		? Total de estudiantes que obtuvieron en el Parcial entre 4.0 y 7.5.
+//		El programa pedirá la cantidad de alumnos que tiene el docente y en cada alumno pedirá
+	//		las 3 notas y calculará todos informes claves que requiere el docente.
+	
+	Definir SumaNotasDesaprobas ,ParcialMedio, nota1, nota2, nota3, NumerosDelAlumnos, notaFinal, i, MaxNota2, reprobados, aprobados, PromedioDesaprobado como real
+	
+	Escribir "ingrese la cantidad de alumnos"
+	leer NumerosDelAlumnos
+	
+	/// variables auxiliares inicializadas en 0
+	
+	reprobados = 0
+	aprobados = 0
+	SumaNotasDesaprobas = 0
+	MaxNota2 = 0
+	ParcialMedio=0
+	PromedioDesaprobado = 0
+	
+	para i <- 1 hasta NumerosDelAlumnos Con Paso 1 Hacer
+		
+		///recoleccion de datos
+		
+		Escribir "dime la nota del trabajo practico del alumno " i
+		leer nota1
+		Escribir "dime la nota del exposicion del alumno " i
+		Leer nota2
+		Escribir "dime la nota del parcial del alumno " i
+		leer nota3
+		
+		
+		// calculo de nota final
+		notaFinal = (nota1*0.35) + (nota2*0.25) + (nota3*0.40)
+		
+		/// calculos logicos
+		
+		// calculo de nota maxima de exposicion
+		si nota2 > MaxNota2 Entonces
+			MaxNota2 = nota2
+		FinSi
+		
+		//calculo de cantidad de notas de parciales entre 4 y 7.7
+		si nota3 >= 4 y nota3 <= 7.5 Entonces
+			ParcialMedio = ParcialMedio + 1
+		FinSi
+		
+		//calculo de reprobados y la suma de sus notas
+		si notaFinal < 6.5 Entonces
+			reprobados = reprobados + 1
+			SumaNotasDesaprobas = SumaNotasDesaprobas + notaFinal
+		FinSi
+		
+		//calculo de notas de parciales superiores a 7.5
+		si nota1 > 7.5 Entonces
+			aprobados = aprobados + 1
+		FinSi
+		aprobados = (aprobados / NumerosDelAlumnos) * 100
+
+	FinPara
+	
+	/// imprimo resultados
+	
+	Escribir "cantidad de alumnos ", NumerosDelAlumnos
+	si PromedioDesaprobado == 0 Entonces
+		Escribir "no hay desaprobados"
+	SiNo
+		PromedioDesaprobado = (SumaNotasDesaprobas/reprobados)*100
+		Escribir "Nota promedio final de los estudiantes que reprobaron el curso es: " PromedioDesaprobado, " %"
+	FinSi
+	Escribir "Porcentaje de alumnos que tienen una nota de integrador mayor a 7.5 es: ", aprobados, " %"
+	Escribir "La mayor nota obtenida en las exposiciones: ", MaxNota2
+	Escribir  "Total de estudiantes que obtuvieron en el Parcial entre 4.0 y 7.5 es: ", ParcialMedio
+	Escribir " "
+	
+	
+	
+	
+	
+FinAlgoritmo

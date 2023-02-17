@@ -1,0 +1,72 @@
+Algoritmo sin_titulo
+//	Un docente de Programación tiene un listado de 3 notas registradas por cada uno de sus
+//	N estudiantes. La nota final se compone de un trabajo práctico Integrador (35%), una
+//	Exposición (25%) y un Parcial (40%). El docente requiere los siguientes informes claves
+//de sus estudiantes:
+//	? Nota promedio final de los estudiantes que reprobaron el curso. Un estudiante
+//	reprueba el curso si tiene una nota final inferior a 6.5
+//		? Porcentaje de alumnos que tienen una nota de integrador mayor a 7.5.
+//		? La mayor nota obtenida en las exposiciones.
+//		? Total de estudiantes que obtuvieron en el Parcial entre 4.0 y 7.5.
+//		El programa pedirá la cantidad de alumnos que tiene el docente y en cada alumno pedirá
+	//		las 3 notas y calculará todos informes claves que requiere el docente.
+	
+	Definir P, nota1, nota2, nota3, N, promedio, i, MaxNota, reprobados, aprobados, PromedioDesaprobado como real
+	
+	Escribir "ingrese la cantidad de alumnos"
+	leer N
+	
+	reprobados = 0
+	aprobados = 0
+	PromedioDesaprobado = 0
+	MaxNota = 0
+	P=0
+	
+	para i <- 1 hasta N Con Paso 1 Hacer
+		Escribir "dime la nota del trabajo practico del alumno " i
+		leer nota1
+		Escribir "dime la nota del exposicion del alumno " i
+		Leer nota2
+		
+		       si nota2>MaxNota Entonces
+			     MaxNota = nota2
+			   FinSi
+		
+		Escribir "dime la nota del parcial del alumno " i
+		leer nota3
+		
+		si nota3 >= 4 y nota3 <= 7.5 Entonces
+			P = P + 1
+		FinSi
+		
+		promedio = nota1*0.35 + nota2*0.25 + nota3* 0.40
+		
+		si promedio < 6.5 Entonces
+			reprobados = reprobados + 1
+			PromedioDesaprobado = PromedioDesaprobado + promedio
+		FinSi
+		
+		si nota1 > 7.5 Entonces
+			aprobados = aprobados + 1
+		FinSi
+		
+	FinPara
+	
+	aprobados = aprobados / N
+	
+	Escribir "cantidad de alumnos ", N
+	si reprobados=0 entonces 
+		escribir " no hay alumnos reprobados" 
+	sino
+		PromedioDesaprobado = PromedioDesaprobado/reprobados
+		Escribir "Nota promedio final de los estudiantes que reprobaron el curso es: " PromedioDesaprobado 
+	FinSi
+	Escribir "Porcentaje de alumnos que tienen una nota de integrador mayor a 7.5 es: ", aprobados
+	Escribir "La mayor nota obtenida en las exposiciones: ", MaxNota
+	Escribir  "Total de estudiantes que obtuvieron en el Parcial entre 4.0 y 7.5 es: ", P
+	
+	
+	
+	
+	
+FinAlgoritmo
