@@ -35,7 +35,8 @@ public class PooEj12 {
         Persona p1 = new Persona();
         metodo1.crearPersona();
         metodo1.menu();
-        
+        System.out.println();
+
     }
-    
+
 }

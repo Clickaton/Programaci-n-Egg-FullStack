@@ -1,0 +1,7 @@
+principal\JDBC.class
+principal\persistencia\DAO.class
+principal\dominio\usuario\UsuarioService.class
+principal\dominio\usuario\Usuario.class
+principal\persistencia\UsuarioDAO.class
+principal\dominio\mascota\Mascota.class
+principal\dominio\mascota\MascotaService.class
