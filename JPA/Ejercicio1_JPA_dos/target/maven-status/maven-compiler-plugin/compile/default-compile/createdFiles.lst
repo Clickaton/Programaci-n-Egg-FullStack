@@ -1,0 +1,15 @@
+com\mycompany\ejercicio1_jpa_dos\CRUD\EditorialJpaController.class
+com\mycompany\ejercicio1_jpa_dos\Entidades\Libro_.class
+com\mycompany\ejercicio1_jpa_dos\CRUD\AutorJpaController.class
+com\mycompany\ejercicio1_jpa_dos\Entidades\Autor_.class
+com\mycompany\ejercicio1_jpa_dos\Servicio\servicioEditorial.class
+com\mycompany\ejercicio1_jpa_dos\CRUD\LibroJpaController.class
+com\mycompany\ejercicio1_jpa_dos\Servicio\Servicio.class
+com\mycompany\ejercicio1_jpa_dos\Entidades\Editorial_.class
+com\mycompany\ejercicio1_jpa_dos\Entidades\Libro.class
+com\mycompany\ejercicio1_jpa_dos\Servicio\servicioAutor.class
+com\mycompany\ejercicio1_jpa_dos\Servicio\servicioLibro.class
+com\mycompany\ejercicio1_jpa_dos\Entidades\Autor.class
+com\mycompany\ejercicio1_jpa_dos\Entidades\Editorial.class
+com\mycompany\ejercicio1_jpa_dos\CRUD\CRUD.class
+com\mycompany\ejercicio1_jpa_dos\Ejercicio1_JPA_dos.class
