@@ -1,0 +1,2 @@
+en el visual, CTRL + ñ
+y una vez abierta la terminar tipear: "npm install -g sass"

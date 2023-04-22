@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="Es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registrar un usuario</h1>
+    <form action="ruta del metodo que va a manejar la informacion" method="dos opciones (get o post) get=No sale la info y no voy a poder modificarla, Post=si y ademas voy a poder modificar la info" enctype="multipart/form-data (Acepta todo tipo de informacion, imagenes)">
+        <label for="Nombre">Nombre del usuario</label>
+        <br>
+        <input type="text" id="Nombre" name="Nombre" required>
+        <br>
+        <label for="Contraseña">Contraseña del usuario</label>
+        <br>
+        <input type="password" id="Contraseña" name="Contraseña" required>
+        <br>
+        <label for="Edad">Edad del usuario</label>
+        <br>
+        <input type="number" id="Edad" name="Edad" required>
+        <br>
+        <label for="Fecha_nacimiento">Fecha de nacimiento del usuario</label>
+        <br>
+        <input type="date" id="Fecha_nacimiento" name="Fecha_nacimiento" required>
+        <br>
+        <label>Sexo del usuario</label required>
+        <br>
+        <input type="radio" name="sexo" value="Masculino"> Masculino
+        <br>
+        <input type="radio" name="sexo" value="Femenino"> Femenino
+        <br>
+        <input type="radio" name="sexo" value="No Binario"> No binario 
+        <br>
+        <label for="Pais">Pais de nacimiento</label> 
+        <br>
+        <select name="Pais" id="Pais" required>
+<option value="Pais">Argentina</option>
+<option value="Pais">Brasil</option>
+<option value="Pais">Chile</option>
+<option value="Pais">Uruguay</option>
+<option value="Pais">Colombia</option>
+<option value="Pais">Venezuela</option>
+<option value="Pais">Paraguay</option>
+<option value="Pais">Bolivia</option>
+</select>
+<br>
+<button type="submit">Enviar</button> <button type="reset">Borrar</button>
+</html>

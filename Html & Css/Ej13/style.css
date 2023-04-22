@@ -1,0 +1,21 @@
+form{
+    position:relative;
+    margin: 0 auto; /* Margen superior e inferior predeterminado, y margen izquierdo y derecho se establecen automáticamente */
+ width: 50%;
+margin-top:15rem;
+
+}
+
+body{
+    position:relative;
+    margin-left:30rem;
+    left:30rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    margin-top: 15rem;
+    width: 37%;
+    height: 25rem;
+    margin-bottom:30rem;
+}
+

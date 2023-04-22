@@ -1,0 +1,32 @@
+.tabla{
+    position:relative;
+    top: 20rem;
+    left: 10rem;
+    margin-right: 45rem;
+    }
+    
+    .precio{
+        position:relative;
+        left: 2rem;
+    }
+    
+    
+    
+    .columna1{
+        position:relative;
+        
+    }
+    
+    #tablita{
+        width: 70%;
+        height: 50%;
+    }
+    
+    .columna3{
+        position:relative;
+        left:7rem;
+    } 
+
+
+    
+    
