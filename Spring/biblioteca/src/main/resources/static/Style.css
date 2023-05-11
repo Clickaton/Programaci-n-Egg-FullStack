@@ -16,6 +16,11 @@ body {
     margin-left: 6em;
 }
 
-#body-list{
+#fondoLista{
     background-color: black;
+}
+
+.centerBody{ /* Esto lo utilicé para poder centrar el contenido de la página */
+    width: 50%; /* Ajustar el ancho del div */ 
+    margin: 0 auto; /* Centrar horizontalmente */
 }

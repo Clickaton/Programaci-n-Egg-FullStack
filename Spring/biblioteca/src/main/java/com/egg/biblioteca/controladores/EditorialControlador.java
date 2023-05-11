@@ -4,8 +4,10 @@
  */
 package com.egg.biblioteca.controladores;
 
+import com.egg.biblioteca.entidades.Editorial;
 import com.egg.biblioteca.excepciones.MiException;
 import com.egg.biblioteca.servicios.ServiciosEditorial;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +51,18 @@ public class EditorialControlador {
 
         return "index.html";
     }
+    
+        @GetMapping("/lista")
+    public String listar(ModelMap modelo){
+    
+        List<Editorial> editoriales = serviciosEditorial.listarEditorial();
+    
+        modelo.addAttribute("editoriales", editoriales);
+        
+        return "editorial_list.html";
+        
+    }
+    
 
 }
 
