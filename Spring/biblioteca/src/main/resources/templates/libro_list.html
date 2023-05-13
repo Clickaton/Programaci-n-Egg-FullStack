@@ -25,13 +25,13 @@
                 </thead>
                 <tbody th:each="libro : ${librs}">
                     <tr>
-                        <th scope="tow" th:text="${librs.isbn}"></th>
+                        <th scope="tow" th:text="${libro.isbn}"></th>
                         <td th:text="${libro.titulo}"></td>
                         <td th:text="${libro.ejemplares}"></td>
                         <td th:text="${libro.autor.nombre}"></td>
                         <td th:text="${libro.editorial.nombre}"></td>
                         <td>
-                            <a th:href="#"><i class="bi bi-pencil-square"></i> modificar </a>
+                            <a th:href="@{/libro/lista}"><i class="bi bi-pencil-square"></i> modificar </a>
                         </td>
                          
                     </tr>

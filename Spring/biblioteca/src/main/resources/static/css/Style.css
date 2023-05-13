@@ -1,0 +1,10 @@
+.centerBody {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#carta, #carta2, #carta3 {
+    display: inline-block;
+    width: 300px;
+    margin-right: 20px;
+} 

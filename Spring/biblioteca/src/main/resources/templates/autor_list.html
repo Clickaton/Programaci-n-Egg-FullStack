@@ -25,7 +25,7 @@
                         <th scope="tow" th:text="${autor.id}"></th>
                         <td th:text="${autor.nombre}"></td>
                         <td>
-                            <a href="@{/autor/modificar}"><i class="bi bi-pencil-square"></i> modificar </a>
+                            <a th:href="@{/autor/modificar/__${autor.id}__}"><i class="bi bi-pencil-square"></i> modificar </a>
                         </td>
                         
                     </tr>
