@@ -1,28 +1,18 @@
-.centerBody {
-    margin: 0 auto;
-    text-align: center;
-}
 
-#carta, #carta2, #carta3 {
-    display: inline-block;
-    width: 300px;
-    margin-right: 20px;
-} 
-
-.containerh2{
-    position : relative;
-    right : 10em;
-    margin-right: 20px;
-}
-
-body {
-  background-color: black; /* Establece el color de fondo en negro */
+body.mi-clase {
+  background-color: white;
 }
 
 .tabla {
   margin: 0 auto; /* Centra el div "tabla" horizontalmente */
-  border-radius: 20px; /* Agrega un radio pronunciado a los bordes del div "tabla" */
+  border-radius: 30px; /* Agrega un radio pronunciado a los bordes del div "tabla" */
   padding: 20px; /* Añade espacio interno al div "tabla" */
+}
+
+#boton {
+  position:relative;
+  right: 3 em;
+  margin-left: 3rem;
 }
 
 .table {
