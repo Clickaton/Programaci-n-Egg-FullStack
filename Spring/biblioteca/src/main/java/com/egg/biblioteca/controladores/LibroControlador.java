@@ -45,7 +45,6 @@ public class LibroControlador {
 
         modelo.addAttribute("autores", autores);
         modelo.addAttribute("editoriales", editoriales);
-       
 
         return "libro_form.html";
     }
@@ -74,50 +73,51 @@ public class LibroControlador {
     }
 
     @GetMapping("/lista")
-    public String  listar(ModelMap modelo) {
+    public String listar(ModelMap modelo) {
         List<Libro> libros = serviciosLibro.listarLibros();
         modelo.addAttribute("librs", libros);
-        
-    return "libro_list.html";
-     }
 
-        @GetMapping("/modificar/{isbn}") //De esta manera vienen los datos precargados
-    public String modificar(@PathVariable Long isbn, ModelMap modelo){
+        return "libro_list.html";
+    }
+
+    @GetMapping("/modificar/{isbn}") //De esta manera vienen los datos precargados
+    public String modificar(@PathVariable Long isbn, ModelMap modelo) {
         modelo.put("libro", serviciosLibro.getOne(isbn));
-        
+
         List<Autor> autores = serviciosAutor.listarAutores();
         List<Editorial> editoriales = serviciosEditorial.listarEditorial();
-        
+
         modelo.addAttribute("autores", autores);
         modelo.addAttribute("editoriales", editoriales);
-        
+        modelo.put("exito", "El libro fue cargado correctamente");
+
         return "libro_modificar.html";
     }
-    
+
     @PostMapping("/modificar/{isbn}")
     public String modificar(@PathVariable @RequestParam(required = false) Long isbn, @RequestParam(required = false) String titulo, @RequestParam(required = false) Integer ejemplares,
-            @RequestParam(required = false) String idAutor, @RequestParam(required = false) String idEditorial, ModelMap modelo){
+            @RequestParam(required = false) String idAutor, @RequestParam(required = false) String idEditorial, ModelMap modelo) {
         try {
+            
             List<Autor> autores = serviciosAutor.listarAutores();
             List<Editorial> editoriales = serviciosEditorial.listarEditorial();
-            
+
             modelo.addAttribute("autores", autores);
             modelo.addAttribute("editoriales", editoriales);
-            
-            serviciosLibro.modificarLibro(isbn, titulo, idAutor, idEditorial, ejemplares);     
-            
+
+            serviciosLibro.modificarLibro(isbn, titulo, idAutor, idEditorial, ejemplares);
+
             return "redirect:../lista";
         } catch (MiException ex) {
             List<Autor> autores = serviciosAutor.listarAutores();
             List<Editorial> editoriales = serviciosEditorial.listarEditorial();
-            
-            modelo.put("error", ex.getMessage());
-            
+
             modelo.addAttribute("autores", autores);
             modelo.addAttribute("editoriales", editoriales);
+            modelo.put("error", ex.getMessage());
+            
             return "libro_modificar.html";
         }
     }
-    
-}
 
+}
