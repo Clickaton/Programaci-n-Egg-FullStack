@@ -4,8 +4,14 @@
  */
 package com.egg.biblioteca.entidades;
 
-import jakarta.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
+
+
+
+
 
 /**
  *
