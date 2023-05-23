@@ -89,7 +89,6 @@ public class LibroControlador {
 
         modelo.addAttribute("autores", autores);
         modelo.addAttribute("editoriales", editoriales);
-        modelo.put("exito", "El libro fue cargado correctamente");
 
         return "libro_modificar.html";
     }
@@ -101,17 +100,18 @@ public class LibroControlador {
             
             List<Autor> autores = serviciosAutor.listarAutores();
             List<Editorial> editoriales = serviciosEditorial.listarEditorial();
-
+            modelo.put("libro", serviciosLibro.getOne(isbn));
             modelo.addAttribute("autores", autores);
             modelo.addAttribute("editoriales", editoriales);
 
             serviciosLibro.modificarLibro(isbn, titulo, idAutor, idEditorial, ejemplares);
+            modelo.put("exito", "El libro fue cargado correctamente");
 
-            return "redirect:../lista";
+            return "libro_modificar.html";
         } catch (MiException ex) {
             List<Autor> autores = serviciosAutor.listarAutores();
             List<Editorial> editoriales = serviciosEditorial.listarEditorial();
-
+            modelo.put("libro", serviciosLibro.getOne(isbn));
             modelo.addAttribute("autores", autores);
             modelo.addAttribute("editoriales", editoriales);
             modelo.put("error", ex.getMessage());

@@ -70,16 +70,16 @@ public class EditorialControlador {
     }
 
     @PostMapping("/modificacion/{id}")
-    public String modificar(@PathVariable String id,@RequestParam(required = false) String nombre, ModelMap modelo) {
+    public String modificar(@PathVariable String id, @RequestParam(required = false) String nombre, ModelMap modelo) {
         try {
             System.out.println(nombre);
             serviciosEditorial.modificarEditorial(id, nombre);
             modelo.put("exito", "El Editorial fue cargado correctamente");
-            System.out.println("Hola");
-            return "redirect:../lista";
+            modelo.put("editorial", serviciosEditorial.getOne(id));
+            return "editorial_modificar.html";
         } catch (MiException ex) {
+            modelo.put("editorial", serviciosEditorial.getOne(id)); //Necesario mandar el objeto para que lo encuentre.
             modelo.put("error", ex.getMessage());
-            System.out.println("ERRROOOOOR22222");
             return "editorial_modificar.html";
         }
     }

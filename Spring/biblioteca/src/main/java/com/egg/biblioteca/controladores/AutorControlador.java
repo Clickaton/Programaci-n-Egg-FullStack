@@ -26,18 +26,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/autor") //localhost:8080/autor
 public class AutorControlador {
-    
+
     @Autowired
     private ServiciosAutor serviciosAutor;
-    
-    
+
     @GetMapping("/registrar")
-    public String registrar(){
-    return "autor_form.html";
+    public String registrar() {
+        return "autor_form.html";
     }
-    
+
     @PostMapping("/registro")
-    public String registro(@RequestParam(required = false) String nombre, ModelMap modelo){
+    public String registro(@RequestParam(required = false) String nombre, ModelMap modelo) {
         try {
             serviciosAutor.crearAutor(nombre);
             modelo.put("exito", "El Autor fue cargado correctamente!");
@@ -46,38 +45,39 @@ public class AutorControlador {
             Logger.getLogger(AutorControlador.class.getName()).log(Level.SEVERE, null, ex);
             return "autor_form.html";
         }
-        
+
         return "index.html";
     }
-   
+
     @GetMapping("/lista")
-    public String listar(ModelMap modelo){
-    
+    public String listar(ModelMap modelo) {
+
         List<Autor> autores = serviciosAutor.listarAutores();
-    
+
         modelo.addAttribute("autores", autores);
-        
+
         return "autor_list.html";
-        
+
     }
-    
+
     @GetMapping("/modificar/{id}") //De esta manera vienen los datos precargados
-    public String modificar(@PathVariable String id, ModelMap modelo){
+    public String modificar(@PathVariable String id, ModelMap modelo) {
         modelo.put("autor", serviciosAutor.getOne(id));
         return "autor_modificar.html";
     }
-    
+
     @PostMapping("/modificar/{id}")
-    public String modificar(@PathVariable String id, String nombre, ModelMap modelo){
+    public String modificar(@PathVariable String id, String nombre, ModelMap modelo) {
         try {
-            serviciosAutor.modificarAutor(id, nombre);     
-            
-            return "redirect:../lista";
+            modelo.put("autor", serviciosAutor.getOne(id));
+            serviciosAutor.modificarAutor(id, nombre);
+            modelo.put("exito", "El Editorial fue cargado correctamente");
+            return "autor_modificar.html";
         } catch (MiException ex) {
+            modelo.put("autor", serviciosAutor.getOne(id));
             modelo.put("error", ex.getMessage());
             return "autor_modificar.html";
         }
     }
-    
-}
 
+}
