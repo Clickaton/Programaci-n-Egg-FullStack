@@ -4,90 +4,112 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html>
-    <head>
-        <title>Biblioteca</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/css/Style.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-        
-    </head>
-    <body>
-        
-        <div id="body">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Biblioteca CRUD</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-    <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Libros
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="http://localhost:8080/libro/registrar">Registrar</a></li>
-            <li><a class="dropdown-item" href="http://localhost:8080/libro/lista">Listar</a></li>
+<head>
+  <title>Biblioteca</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/css/Style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div id="body">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Biblioteca CRUD</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Libros
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="http://localhost:8080/libro/registrar">Registrar</a></li>
+                <li><a class="dropdown-item" href="http://localhost:8080/libro/lista">Listar</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Autores
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="http://localhost:8080/autor/registrar">Registrar</a></li>
+                <li><a class="dropdown-item" href="http://localhost:8080/autor/lista">Listar</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Editoriales
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="http://localhost:8080/editorial/registrar">Registrar</a></li>
+                <li><a class="dropdown-item" href="http://localhost:8080/editorial/lista">Listar</a></li>
+              </ul>
+            </li>
           </ul>
-        </li>
-    <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Autores
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="http://localhost:8080/autor/registrar">Registrar</a></li>
-            <li><a class="dropdown-item" href="http://localhost:8080/autor/lista">Listar</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Editoriales
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="http://localhost:8080/editorial/registrar">Registrar</a></li>
-            <li><a class="dropdown-item" href="http://localhost:8080/editorial/lista">Listar</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </div>
+    </nav>
   </div>
-</nav>
-        </div>
-    <br>    
-    <div class="centerBody">
-        <div id="body"><h1 id="h1">Bienvenido a nuestra Biblioteca</h1>
-        </div>
-<br>
-        
+  <br>
+  <div class="centerBody">
+    <div id="body">
+      <h1 id="h1">Bienvenido a nuestra Biblioteca</h1>
+    </div>
+    <br>
 
-        <div class="">
+
+    <div class="">
       <div id="carta" class="card text-bg-light mb-3" style="max-width: 18rem;">
         <div class="card-header">Utilidad</div>
         <div class="card-body">
           <h4 class="card-title">¿Qué podrás hacer aquí?</h4>
-          <p class="card-text">Nuestra aplicación web de biblioteca le permitirá gestionar todos los aspectos relacionados con su colección de libros. Podrá crear, leer, actualizar y eliminar información de libros, autores y editoriales con facilidad. Podrá agregar y actualizar la información de los libros, agregar y editar información de los autores, y también agregar y actualizar información de las editoriales. Además, podrá buscar información de libros y autores en la base de datos. Todo en una plataforma fácil de usar e intuitiva.</p>
+          <p class="card-text">Nuestra aplicación web de biblioteca le permitirá gestionar todos los aspectos
+            relacionados con su colección de libros. Podrá crear, leer, actualizar y eliminar información de libros,
+            autores y editoriales con facilidad. Podrá agregar y actualizar la información de los libros, agregar y
+            editar información de los autores, y también agregar y actualizar información de las editoriales. Además,
+            podrá buscar información de libros y autores en la base de datos. Todo en una plataforma fácil de usar e
+            intuitiva.</p>
         </div>
-      
+
         <div></div>
       </div>
       <div id="carta2" class="card text-bg-light mb-3" style="max-width: 16rem;">
         <div class="card-header">Diseño</div>
         <div class="card-body">
           <h4 class="card-title">Navegación optimizada</h4>
-          <p class="card-text">Nuestra página web cuenta con un diseño de fácil acceso y movilidad para que puedas navegar sin dificultades desde cualquier dispositivo. Hemos organizado nuestros contenidos en secciones claras y bien diferenciadas para que puedas encontrar la información que necesitas de manera rápida y sencilla. Esperamos que disfrutes de tu visita y si tienes alguna sugerencia o comentario, no dudes en hacérnoslo saber. ¡Gracias por elegirnos! <br> </p>
+          <p class="card-text">Nuestra página web cuenta con un diseño de fácil acceso y movilidad para que puedas
+            navegar sin dificultades desde cualquier dispositivo. Hemos organizado nuestros contenidos en secciones
+            claras y bien diferenciadas para que puedas encontrar la información que necesitas de manera rápida y
+            sencilla. Esperamos que disfrutes de tu visita y si tienes alguna sugerencia o comentario, no dudes en
+            hacérnoslo saber. ¡Gracias por elegirnos! <br> </p>
         </div>
-            </div>
-            <div id="carta3" class="card text-bg-light mb-3" style="max-width: 16rem;">
-              <div class="card-header">Respaldo</div>
-              <div class="card-body">
-                <h4 class="card-title">Base de datos eficiente</h4>
-                <p class="card-text">Nuestra página web utiliza una base de datos eficiente para almacenar, editar y eliminar datos con facilidad y persistirlos. Esto nos permite mantener la información actualizada y accesible para nuestros usuarios en todo momento. Además, podemos listar los datos de forma organizada y clara. La base de datos es una herramienta clave para garantizar la disponibilidad e integridad de la información en nuestra página web.<br> </p>
-              </div>
-              </div>
-        
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    </body>
+      </div>
+      <div id="carta3" class="card text-bg-light mb-3" style="max-width: 16rem;">
+        <div class="card-header">Respaldo</div>
+        <div class="card-body">
+          <h4 class="card-title">Base de datos eficiente</h4>
+          <p class="card-text">Nuestra página web utiliza una base de datos eficiente para almacenar, editar y eliminar
+            datos con facilidad y persistirlos. Esto nos permite mantener la información actualizada y accesible para
+            nuestros usuarios en todo momento. Además, podemos listar los datos de forma organizada y clara. La base de
+            datos es una herramienta clave para garantizar la disponibilidad e integridad de la información en nuestra
+            página web.<br> </p>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
