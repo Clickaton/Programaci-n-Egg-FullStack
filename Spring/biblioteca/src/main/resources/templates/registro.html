@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -34,21 +34,19 @@
                 <input type="text" class="form-control" name="nombre" placeholder="NOMBRE" th:value="${nombre}">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                     name="email" placeholder="EMAIL" th:value="${email}">
-                <div id="emailHelp" class="form-text">Nunca compartiremos tu email con nadie.</div>
+
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-                <div id="emailHelp" class="form-text">Ingrese una contraseña de más de 5 dígitos.</div>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password"
+                    placeholder="INGRESE UNA CONTRASEÑA CON MAS DE 5 DÍGITOS" th:value="${password}">
+
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Repetir la contraseña</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password2"
                     placeholder="REPETIR CONTRASEÑA" th:value="${password2}">
-                <div id="emailHelp" class="form-text">Ingrese una contraseña de más de 5 dígitos.</div>
+
             </div>
             <button type="submit" class="btn btn-primary">Registrar</button>
         </form>

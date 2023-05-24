@@ -48,15 +48,18 @@ public class ServiciosUsuario implements UserDetailsService {
 
     private void validar(String nombre, String email, String password, String password2) throws MiException {
 
-        if (nombre.isEmpty() || nombre == null) {
+        if (nombre == null || nombre.isEmpty()) {
             throw new MiException("El nombre no puede ser nulo o estar vacío");
         }
-        if (email.isEmpty() || email == null) {
+        
+        if (email == null || email.isEmpty()) {
             throw new MiException("El email no puede ser nulo o estar vacío");
         }
-        if (password.isEmpty() || password == null || password.length() <= 5) {
-            throw new MiException("La contraseña no puede estar vacía, y debe tener más de 5 dígitos");
+        
+        if (password == null || password.isEmpty() || password.length() <= 5) {
+            throw new MiException("La contraseña no puede estar vacía y debe tener más de 5 dígitos");
         }
+        
         if (!password.equals(password2)) {
             throw new MiException("Las contraseñas ingresadas deben ser iguales");
         }
