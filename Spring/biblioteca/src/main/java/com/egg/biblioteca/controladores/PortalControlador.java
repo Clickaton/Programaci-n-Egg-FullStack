@@ -49,7 +49,8 @@ public class PortalControlador {
         } catch (MiException ex) {
 
             modelo.put("error", ex.getMessage());
-
+            modelo.put("nombre",nombre);
+            modelo.put("email", email);
             return "registro.html";
         }
 
