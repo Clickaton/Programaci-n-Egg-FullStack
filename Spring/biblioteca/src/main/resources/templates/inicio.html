@@ -28,14 +28,40 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a class="nav-link" href="http://localhost:8080/login" role="button" aria-expanded="false">
-                  Ingresar
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Libros
                 </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="http://localhost:8080/libro/lista">Listar</a></li>
+                </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="http://localhost:8080/registrar" role="button">
-                  Registrarse!
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Autores
                 </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="http://localhost:8080/autor/lista">Listar</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Editoriales
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="http://localhost:8080/editorial/lista">Listar</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Perfil
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+                </ul>
               </li>
             </ul>
           </div>

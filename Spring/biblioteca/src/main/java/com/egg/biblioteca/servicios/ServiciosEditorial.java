@@ -61,7 +61,6 @@ public class ServiciosEditorial {
     
     private void validar(String nombre) throws MiException{
     if(nombre.isEmpty() || nombre == null){
-        System.out.println("ERROOOOORRRRRR");
     throw new MiException("El nombre no puede ser nulo ni estar vacío");
     }
     }

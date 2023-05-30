@@ -12,23 +12,25 @@
 </head>
 
 <body>
-    <div id="body">
-        <h1 id="h1">Registro de usuarios</h1>
-        <br>
-        <div th:if="${error != null}" class="card text-white bg-danger mb-3 mensajeError">
-            <div class="card-body">
-                <h5 class="card-title">Error! 👎</h5>
-                <p class="card-text" th:text="${error}"></p>
-            </div>
-        </div>
 
-        <div th:if="${exito != null}" class="card text-white bg-danger mb-3 mensajeError">
-            <div class="card-body">
-                <h5 class="card-title">Se ha cargado con Éxito! 👍</h5>
-                <p class="card-text" th:text="${exito}"></p>
-            </div>
+    <h1 id="h1" class="h1registro">Registro de usuarios</h1>
+
+    <div th:if="${error != null}" class="card text-white bg-danger mb-3 mensajeError">
+        <div class="card-body">
+            <h5 class="card-title">Error! 👎</h5>
+            <p class="card-text" th:text="${error}"></p>
         </div>
-        <br>
+    </div>
+
+
+    <div th:if="${exito != null}" class="card text-white bg-danger mb-3 mensajeError">
+        <div class="card-body">
+            <h5 class="card-title">Se ha cargado con Éxito! 👍</h5>
+            <p class="card-text" th:text="${exito}"></p>
+        </div>
+    </div>
+
+    <div class="container">
         <form class="formulario" th:action="@{/registro}" method="POST">
             <div class="form-goup my-3">
                 <input type="text" class="form-control" name="nombre" placeholder="NOMBRE" th:value="${nombre}">
@@ -40,7 +42,7 @@
             </div>
             <div class="mb-3">
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password"
-                    placeholder="INGRESE UNA CONTRASEÑA CON MAS DE 5 DÍGITOS" th:value="${password}">
+                    placeholder="INGRESE LA CONTRASEÑA" th:value="${password}">
 
             </div>
             <div class="mb-3">

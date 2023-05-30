@@ -41,3 +41,22 @@ body {
 .table td {
   border-color: #454d55; /* Establece el color del borde de las celdas de la tabla */
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajusta la altura según tus necesidades */
+}
+
+.h1registro{
+  position: relative;
+  text-align: center;
+  top: 16rem;
+}
+
+.dosBotones{
+  position: relative;
+  right: 3rem;
+}
+
