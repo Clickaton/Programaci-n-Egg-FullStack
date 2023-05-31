@@ -13,11 +13,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <nav th:replace="/fragments/navbar :: nav" </nav>
   </div>
   <br>
+  <br>
   <div class="centerBody">
     <div id="body">
       <h1 th:if="${session.usuariosession != null}"
         th:text="'Bienvenido a nuestra biblioteca ' + ${session.usuariosession.nombre} + '!'" id=" h1"></h1>
-      <img class="logo" th:src="@{/imagen/perfil/__${session.usuariosession.id}__}" alt="img logo">
       <div th:if="${exito != null}" class="card text-bg-success mb-3">
         <div class="card-body">
           <h5 class="card-title">Se ha cargado con Éxito! 👍</h5>

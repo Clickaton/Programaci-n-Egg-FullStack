@@ -50,12 +50,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" th:href="@{/perfil}">Cerrar sesión</a>
+                                <a class="dropdown-item" th:href="@{/logout}">Cerrar sesión</a>
                             </li>
-                        </ul>
-                        <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="/logout">Editar pefil</a>
+                                <a class="dropdown-item" th:href="@{/perfil}">Editar perfil</a>
                             </li>
                         </ul>
                     </li>
@@ -71,6 +69,10 @@
                         </a>
                     </li>
                 </ul>
+                <div th:if="${session.usuariosession != null}">
+                    <img href=" /registrar" th:src="@{/imagen/perfil/__${session.usuariosession.id}__}" alt="img logo"
+                        class="img-limitada">
+                </div>
             </div>
         </div>
     </div>
