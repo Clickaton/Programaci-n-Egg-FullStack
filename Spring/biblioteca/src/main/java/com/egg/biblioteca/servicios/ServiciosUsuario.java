@@ -84,6 +84,8 @@ public class ServiciosUsuario implements UserDetailsService {
             
             Imagen imagen = serviciosImagen.actualizar(archivo, idImagen);
             
+            usuario.setImagen(imagen);
+            
             usuarioRepositorio.save(usuario);
         }
     }
@@ -130,6 +132,10 @@ public class ServiciosUsuario implements UserDetailsService {
             return null;
         }
         
+    }
+
+   public Usuario getOne(String id){
+         return usuarioRepositorio.getOne(id);
     }
 
 }
