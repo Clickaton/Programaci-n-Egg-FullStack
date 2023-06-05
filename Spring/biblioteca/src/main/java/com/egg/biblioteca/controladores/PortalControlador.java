@@ -89,21 +89,24 @@ public class PortalControlador {
     }
     
      @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
-    @PostMapping("/perfil/{id}")
-    public String actualizar(MultipartFile archivo, @PathVariable String id, @RequestParam String nombre, @RequestParam String email, @RequestParam String password, @RequestParam String password2, ModelMap modelo){
-    
-         try {
-             servicioUsuario.actualizar(archivo, password2, nombre, email, password, password2);
-        
-             modelo.put("exito", "Usuario actualizado correctamente!");
-             return "inicio.html";
-         } catch (MiException ex) {
-         
-             modelo.put("error", ex.getMessage());
-             modelo.put("nombre", nombre);
-             modelo.put("email", email);
-             
-            return "usuario_modificar.html";
-        }
+@PostMapping("/perfil/{id}")
+public String actualizar(MultipartFile archivo, @PathVariable String id, @RequestParam(required = false) String nombre, @RequestParam String email, @RequestParam
+        String password, @RequestParam String password2, ModelMap modelo, HttpSession session){
+
+     try {
+         servicioUsuario.actualizar(archivo, id, nombre, email, password, password2);
+         Usuario usuario = (Usuario) session.getAttribute("usuariosession");
+         modelo.put("usuario", usuario);
+         modelo.put("exito", "Usuario actualizado correctamente!");
+         return "inicio.html";
+     } catch (MiException ex) {
+         Usuario usuario = (Usuario) session.getAttribute("usuariosession");
+         modelo.put("usuario", usuario);
+         modelo.put("error", ex.getMessage());
+         modelo.put("nombre", nombre);
+         modelo.put("email", email);
+
+        return "usuario_modificar.html";
     }
+}
 }
