@@ -31,3 +31,8 @@ body.mi-clase {
 .table td {
   border-color: #454d55; /* Establece el color del borde de las celdas de la tabla */
 }
+
+.logo{
+  width: 18rem;
+  height: 18rem;
+}

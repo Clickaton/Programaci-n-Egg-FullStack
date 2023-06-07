@@ -33,36 +33,36 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @Service
 public class ServiciosUsuario implements UserDetailsService {
-
+    
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
     
     @Autowired
     private ServiciosImagen serviciosImagen;
-
+    
     @Transactional
     public void registrar(MultipartFile archivo, String nombre, String email, String password, String password2) throws MiException {
         validar(nombre, email, password, password2);
-
+        
         Usuario usuario = new Usuario();
-
+        
         usuario.setNombre(nombre);
         usuario.setEmail(email);
-
+        
         usuario.setPassword(new BCryptPasswordEncoder().encode(password));
-
+        
         usuario.setRol(Rol.USER);
-
+        
         Imagen imagen = serviciosImagen.guardar(archivo);
         
         usuario.setImagen(imagen);
         
         usuarioRepositorio.save(usuario);
     }
-
+    
     @Transactional
     public void actualizar(MultipartFile archivo, String idUsuario, String nombre, String email, String password, String password2) throws MiException {
-    
+        
         validar(nombre, email, password, password2);
         
         Optional<Usuario> respuesta = usuarioRepositorio.findById(idUsuario);
@@ -91,7 +91,7 @@ public class ServiciosUsuario implements UserDetailsService {
     }
     
     private void validar(String nombre, String email, String password, String password2) throws MiException {
-
+        
         if (nombre == null || nombre.isEmpty()) {
             throw new MiException("El nombre no puede ser nulo o estar vacío");
         }
@@ -108,7 +108,7 @@ public class ServiciosUsuario implements UserDetailsService {
             throw new MiException("Las contraseñas ingresadas deben ser iguales");
         }
     }
-
+    
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Usuario usuario = usuarioRepositorio.buscarPorEmail(email);
@@ -117,7 +117,7 @@ public class ServiciosUsuario implements UserDetailsService {
             
             List<GrantedAuthority> permisos = new ArrayList();
             
-            GrantedAuthority p = new SimpleGrantedAuthority("ROLE_"+ usuario.getRol().toString());
+            GrantedAuthority p = new SimpleGrantedAuthority("ROLE_" + usuario.getRol().toString());
             
             permisos.add(p);
             
@@ -128,14 +128,42 @@ public class ServiciosUsuario implements UserDetailsService {
             session.setAttribute("usuariosession", usuario);
             
             return new User(usuario.getEmail(), usuario.getPassword(), permisos);
-        }else {
+        } else {
             return null;
         }
         
     }
-
-   public Usuario getOne(String id){
-         return usuarioRepositorio.getOne(id);
+    
+    public Usuario getOne(String id) {
+        return usuarioRepositorio.getOne(id);
     }
-
+    
+    @Transactional(readOnly = true)
+    public List<Usuario> listarUsuarios() {
+        
+        List<Usuario> usuarios = new ArrayList();
+        
+        usuarios = usuarioRepositorio.findAll();
+        
+        return usuarios;
+    }
+    
+    @Transactional
+    public void cambiarRol(String id) {
+        Optional<Usuario> respuesta = usuarioRepositorio.findById(id);
+        
+        if (respuesta.isPresent()) {
+            
+            Usuario usuario = respuesta.get();
+            
+            if (usuario.getRol().equals(Rol.USER)) {
+                usuario.setRol(Rol.ADMIN);
+            } else if (usuario.getRol().equals(Rol.ADMIN)) {
+                usuario.setRol(Rol.USER);
+            }
+        }    
+    }
+    
+//    private void validar
+    
 }
