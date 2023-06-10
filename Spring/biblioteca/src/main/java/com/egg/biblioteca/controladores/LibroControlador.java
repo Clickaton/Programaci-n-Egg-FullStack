@@ -119,5 +119,21 @@ public class LibroControlador {
             return "libro_modificar.html";
         }
     }
+    
+     @GetMapping("/eliminar/{isbn}")
+  public String eliminar(@PathVariable Long isbn, ModelMap modelo) {
+    try {
+      serviciosLibro.eliminarLibro(isbn);
+      modelo.put("exito", "El libro fue eliminado correctamente");
+    } catch (MiException ex) {
+      Logger.getLogger(LibroControlador.class.getName()).log(Level.SEVERE, null, ex);
+      List<Autor> autores = serviciosAutor.listarAutores();
+      List<Editorial> editoriales = serviciosEditorial.listarEditorial();
+      modelo.addAttribute("autores", autores);
+      modelo.addAttribute("editoriales", editoriales);
+      modelo.put("error", ex.getMessage());
+    }
+    return "redirect:/libro/lista"; // Redirigir a la lista de libros después de la eliminación
+  }
 
 }

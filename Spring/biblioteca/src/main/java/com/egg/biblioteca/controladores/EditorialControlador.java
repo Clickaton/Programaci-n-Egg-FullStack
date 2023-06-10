@@ -84,4 +84,13 @@ public class EditorialControlador {
         }
     }
 
+      @PostMapping("/eliminar/{id}")
+  public String eliminar(@PathVariable String id, ModelMap modelo) {
+      serviciosEditorial.eliminarEditorial(id);
+      modelo.put("exito", "La editorial fue eliminada correctamente");
+    return "redirect:/editorial/lista";
+  }
+
+  // ...
+    
 }

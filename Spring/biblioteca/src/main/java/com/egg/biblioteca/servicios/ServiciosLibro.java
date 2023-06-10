@@ -87,6 +87,18 @@ public class ServiciosLibro {
         }       
     }
     
+      @Transactional
+  public void eliminarLibro(Long isbn) throws MiException {
+    Optional<Libro> respuesta = libroRepositorio.findById(isbn);
+
+    if (respuesta.isPresent()) {
+      Libro libro = respuesta.get();
+      libroRepositorio.delete(libro);
+    } else {
+      throw new MiException("El libro no existe");
+    }
+  }
+    
     public Libro getOne(Long isbn){
         return libroRepositorio.getOne(isbn);
     }     

@@ -41,6 +41,8 @@ public class ServiciosAutor {
 
     }
 
+
+    
     @Transactional
     public void modificarAutor(String id,String nombre) throws MiException{
     
@@ -55,6 +57,18 @@ public class ServiciosAutor {
         }
         
     }
+    
+        @Transactional
+    public void eliminarAutor(String id) throws MiException {
+        Optional<Autor> respuesta = autorRepositorio.findById(id);
+
+        if (respuesta.isPresent()) {
+            autorRepositorio.deleteById(id);
+        } else {
+            throw new MiException("No se encontró el autor con el ID proporcionado");
+        }
+    }
+    
     
    public Autor getOne(String id){
         return autorRepositorio.getOne(id);

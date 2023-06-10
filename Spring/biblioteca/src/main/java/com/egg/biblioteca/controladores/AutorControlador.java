@@ -80,5 +80,20 @@ public class AutorControlador {
             return "autor_modificar.html";
         }
     }
+    
+      @GetMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable String id, ModelMap modelo) {
+        try {
+            serviciosAutor.eliminarAutor(id);
+            modelo.put("exito", "El Autor fue eliminado correctamente");
+        } catch (MiException ex) {
+            modelo.put("error", ex.getMessage());
+            Logger.getLogger(AutorControlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "redirect:/autor/lista";
+    }
+
 
 }
+
+

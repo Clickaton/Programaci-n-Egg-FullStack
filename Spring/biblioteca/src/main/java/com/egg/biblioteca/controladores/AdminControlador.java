@@ -34,14 +34,17 @@ public class AdminControlador {
     public String listar(ModelMap modelo) {
     List<Usuario> usuarios = serviciosUsuario.listarUsuarios();
     modelo.addAttribute("usuarios", usuarios);
-    return "usuario_list";
+    return "usuario_list.html";
     }
     
     @GetMapping("/modificarRol/{id}")
     public String cambiarRol (@PathVariable String id){
+        System.out.println("hola1");
         serviciosUsuario.cambiarRol(id);
-        
+        System.out.println("hola2");
         return "redirect:/admin/usuarios";
     }
+    
+    
     
 }

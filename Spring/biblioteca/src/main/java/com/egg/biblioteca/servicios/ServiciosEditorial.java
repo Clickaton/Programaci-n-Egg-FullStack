@@ -55,6 +55,11 @@ public class ServiciosEditorial {
         }
     }
     
+      @Transactional
+    public void eliminarEditorial(String id) {
+        editorialRepositorio.deleteById(id);
+    }
+    
        public Editorial getOne(String id){
         return editorialRepositorio.getOne(id);
 }

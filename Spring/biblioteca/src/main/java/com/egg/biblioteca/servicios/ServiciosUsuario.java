@@ -74,7 +74,12 @@ public class ServiciosUsuario implements UserDetailsService {
             
             usuario.setPassword(new BCryptPasswordEncoder().encode(password));
             
-            usuario.setRol(Rol.USER);
+            if (usuario.getRol().equals("USER")) {
+                usuario.setRol(Rol.USER);
+            } else{
+            usuario.setRol(Rol.ADMIN);
+            }
+            
             
             String idImagen = null;
             
