@@ -9,6 +9,7 @@ import com.egg.biblioteca.excepciones.MiException;
 import com.egg.biblioteca.repositorios.AutorRepositorio;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -59,7 +60,7 @@ public class ServiciosAutor {
     }
     
         @Transactional
-    public void eliminarAutor(String id) throws MiException {
+    public void eliminarAutor(String id) throws MiException, DataIntegrityViolationException {
         Optional<Autor> respuesta = autorRepositorio.findById(id);
 
         if (respuesta.isPresent()) {

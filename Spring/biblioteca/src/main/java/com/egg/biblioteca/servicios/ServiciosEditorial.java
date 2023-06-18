@@ -5,10 +5,12 @@
 package com.egg.biblioteca.servicios;
 
 import com.egg.biblioteca.entidades.Editorial;
+import com.egg.biblioteca.entidades.Libro;
 import com.egg.biblioteca.excepciones.MiException;
 import com.egg.biblioteca.repositorios.EditorialRepositorio;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -56,8 +58,8 @@ public class ServiciosEditorial {
     }
     
       @Transactional
-    public void eliminarEditorial(String id) {
-        editorialRepositorio.deleteById(id);
+    public void eliminarEditorial(String id) throws DataIntegrityViolationException {
+            editorialRepositorio.deleteById(id);
     }
     
        public Editorial getOne(String id){

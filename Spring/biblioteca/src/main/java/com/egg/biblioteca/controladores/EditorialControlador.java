@@ -11,13 +11,11 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
 
 /**
  *
@@ -84,13 +82,16 @@ public class EditorialControlador {
         }
     }
 
-      @PostMapping("/eliminar/{id}")
-  public String eliminar(@PathVariable String id, ModelMap modelo) {
-      serviciosEditorial.eliminarEditorial(id);
-      modelo.put("exito", "La editorial fue eliminada correctamente");
-    return "redirect:/editorial/lista";
-  }
+    @GetMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable String id, ModelMap modelo){
+        try {
+            serviciosEditorial.eliminarEditorial(id);
+            modelo.put("exito", "La editorial fue eliminada correctamente");
+            return "redirect:/editorial/lista";
+        }catch (DataIntegrityViolationException ex) {
+            modelo.put("error", "No se puede eliminar la editorial porque existen libros asociados a ella, debe eliminar primero el libro asociado.");
+            return "editorial_modificar.html";
+        }
+    }
 
-  // ...
-    
 }

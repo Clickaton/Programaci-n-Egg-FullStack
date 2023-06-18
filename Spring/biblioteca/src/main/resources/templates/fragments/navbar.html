@@ -43,6 +43,19 @@
                             <li><a class="dropdown-item" href="/editorial/lista">Listar</a></li>
                         </ul>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" sec:authorize="hasRole('ADMIN')"
+                            th:if="${session.usuariosession != null}" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Usuarios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" sec:authorize="hasRole('ADMIN')"
+                                    href="/admin/usuarios">Listar</a></li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" th:if="${session.usuariosession != null}" href="#"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">

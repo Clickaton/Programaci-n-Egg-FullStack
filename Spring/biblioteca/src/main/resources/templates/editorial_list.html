@@ -14,6 +14,20 @@
 
 <body class="mi-clase">
 
+    <div th:if="${exito != null}" class="card text-bg-success mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Se ha cargado con Éxito! 👍</h5>
+            <p class="card-text" th:text="${exito}"></p>
+        </div>
+    </div>
+    <div th:if="${error != null}" class="card text-white bg-danger mb-3 mensajeError" style="max-width: 18rem;"
+        id="error">
+        <div class="card-body">
+            <h5 class="card-title">Error! 👎</h5>
+            <p class="card-text" th:text="${error}"></p>
+        </div>
+    </div>
+
     <div class="tabla">
         <table id="tablita" class="table table-dark table-hover">
             <thead>

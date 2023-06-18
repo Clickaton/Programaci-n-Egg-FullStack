@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import com.egg.biblioteca.excepciones.MiException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -86,13 +87,16 @@ public class AutorControlador {
         try {
             serviciosAutor.eliminarAutor(id);
             modelo.put("exito", "El Autor fue eliminado correctamente");
+            return "redirect:/autor/lista";
         } catch (MiException ex) {
             modelo.put("error", ex.getMessage());
             Logger.getLogger(AutorControlador.class.getName()).log(Level.SEVERE, null, ex);
+            return "redirect:/autor/lista";
+        } catch (DataIntegrityViolationException ex){
+            modelo.put("error", "No se puede eliminar el autor porque existen libros asociados, debe eliminar primero el libro asociado.");
+            return "autor_modificar.html";
         }
-        return "redirect:/autor/lista";
     }
-
 
 }
 

@@ -10,9 +10,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -39,12 +37,10 @@ public class AdminControlador {
     
     @GetMapping("/modificarRol/{id}")
     public String cambiarRol (@PathVariable String id){
-        System.out.println("hola1");
         serviciosUsuario.cambiarRol(id);
-        System.out.println("hola2");
         return "redirect:/admin/usuarios";
     }
-    
+
     
     
 }
