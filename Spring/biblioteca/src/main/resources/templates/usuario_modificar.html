@@ -13,7 +13,7 @@
 
 <body>
 
-    <h1 id="h1" class="h1registro">Editar usuario</h1>
+    <h1 id="h1" class="h1EditarUsuario">Editar usuario</h1>
 
     <div th:if="${error != null}" class="card text-white bg-danger mb-3 mensajeError">
         <div class="card-body">
@@ -33,6 +33,11 @@
     <div class="container">
         <form class="formulario" th:action="@{/perfil/__${usuario.id}__}" method="POST" enctype="multipart/form-data">
 
+            <img href=" /registrar" th:src="@{/imagen/perfil/__${session.usuariosession.id}__}" alt="img logo"
+                class="img-logo">
+
+            <br>
+
             <input hidden th:value="${id}" name="id">
 
             <div class="form-goup my-3">
@@ -45,8 +50,7 @@
             </div>
 
             <div class="mb-3">
-                <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    name="archivo" required>
+                <input type="file" class="form-control" id="" aria-describedby="" name="archivo" required>
             </div>
 
             <div class="mb-3">

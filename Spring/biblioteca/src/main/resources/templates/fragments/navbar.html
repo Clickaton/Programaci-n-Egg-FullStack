@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Biblioteca CRUD</a>
+        <a class="navbar-brand" href="http://localhost:8080/">Biblioteca CRUD</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -59,7 +59,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" th:if="${session.usuariosession != null}" href="#"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Perfil
+                            Perfil <img href=" /registrar" th:src="@{/imagen/perfil/__${session.usuariosession.id}__}"
+                                alt="img logo" class="img-limitada">
                         </a>
                         <ul class="dropdown-menu">
                             <li>
@@ -82,10 +83,6 @@
                         </a>
                     </li>
                 </ul>
-                <div th:if="${session.usuariosession != null}">
-                    <img href=" /registrar" th:src="@{/imagen/perfil/__${session.usuariosession.id}__}" alt="img logo"
-                        class="img-limitada">
-                </div>
             </div>
         </div>
     </div>
